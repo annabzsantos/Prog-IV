@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #252525;
+    color: #fff;
+    cursor: url('arrow.png'), auto;
+}
+
+button {
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background: darkgoldenrod;
+}
+
+#areaJogo{
+    position: relative;
+    width: auto;
+    height: 800px;
+    margin: 0;
+    overflow: hidden;
+}
+
+.enemy {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url('mask_yami.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    animation: spawn 0.3s ease-out;
+    transition: transform 0.1s;
+}
+
+.enemy.hit {
+    filter: brightness(2) saturate(2);
+    transform: scale(1.3);
+}
+
+.trail {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 60%;
+    pointer-events: none;
+    background: radial-gradient(circle, #ff0000 20%, #8b0000 80%, rgba(139, 0, 0, 0) 100%);
+    box-shadow: 0 0 4px rgba(255, 0, 0, 0.4);
+    transform: translate(-60%, -60%);
+    animation: subtleRedFade 0.6s ease-out forwards;
+}
+
+@keyframes subtleRedFade {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+        filter: blur(1px);
+    }
+}
+
+@keyframes spawn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.1);
+    }
+}
