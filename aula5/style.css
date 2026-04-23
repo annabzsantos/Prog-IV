@@ -1,0 +1,89 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #d594ef;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+header {
+    background-color: #cc38fe;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+.controls input, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+}
+
+.controls button {
+    color: #ed38fe;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.controls button:hover {
+    background-color: #ed38fe;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: 130px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-info {
+    color: white;
+    border: none;
+    text-align: center;
+    background: linear-gradient(90deg, #f2a1f6, #a131b7);
+    cursor: default;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.card-detalhes img {
+    padding: 20px;
+    width: 130px;
+    height: 130px;
+}
+
+.card-info button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    color: #ed38fe;
+    cursor: pointer;
+}
+.card-info button:hover {
+    background-color: #ed38fe;
+    color: white;
+}

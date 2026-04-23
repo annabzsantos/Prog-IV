@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Atividade 4 - prog4 </title>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="PokeAPI Logo" class="logo-api">
+    </header>
+
+    <div class="controls">
+        <input type="text" id="search" placeholder="Buscar Pokémon por nome ou ID">
+            <button onclick="buscarPokemon()">Buscar</button>
+                <select id="typeFilter" onchange="filtrarTipo()">
+                    <option value="">Todos os tipos</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="grass">Grass</option>
+                    <option value="electric">Electric</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="rock">Rock</option>
+                    <option value="ground">Ground</option>
+                </select>
+    </div>
+    <div class="grid" id="pokedex"></div>
+    <script>
+        const pokedex = document.getElementById('pokedex');
+        const loading = document.getElementById('loading');
+        let listaPokemons = [];
+        async function carregarPokemons() {
+            listaPokemons = [];
+            for (let i = 1; i <= 100; i++) {
+                const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+                const data = await res.json();
+                listaPokemons.push(data);
+            }
+            renderizar(listaPokemons);
+        }
+        function renderizar(lista) {
+            pokedex.innerHTML = '';
+            lista.forEach(p => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                <img src="${p.sprites.front_default}">
+                <h3>${p.name}</h3>
+                <p>${p.types.map(t => t.type.name).join(', ')}</p>`;
+                pokedex.appendChild(card);
+            });
+        }
+
+        async function buscarPokemon() {
+            const termo = document.getElementById('search').value.toLowerCase();
+            if (!termo) return renderizar(listaPokemons);
+            try {
+                const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${termo}`);
+                if (!res.ok) throw new Error();
+                    const data = await res.json();
+                renderizar([data]);
+                } catch {
+                    pokedex.innerHTML = '<p style="color:white; text-align:center;">Pokémon não encontrado</p>';
+                }
+            }
+        
+        function filtrarTipo() {
+            const tipo = document.getElementById('typeFilter').value;
+            if (!tipo) return renderizar(listaPokemons);
+                const filtrados = listaPokemons.filter(p => p.types.some(t => t.type.name === tipo));
+            renderizar(filtrados);
+        }
+
+        function infoPokemon(p) {
+            pokedex.innerHTML = `
+            <div class="card-info">
+                <h3>${p.name}</h3>
+                <img src="${p.sprites.front_default}">
+                <p>Tipos: ${p.types.map(t => t.type.name).join(', ')}</p>
+                <p>Altura: ${p.height}</p>
+                <p>Peso: ${p.weight}</p>
+                <p>HP: ${p.stats.find(s => s.stat.name === 'hp').base_stat}</p>
+                <p>Ataque: ${p.stats.find(s => s.stat.name === 'attack').base_stat}</p>
+                <p>Defesa: ${p.stats.find(s => s.stat.name === 'defense').base_stat}</p>
+
+                <button onclick="carregarPokemons()">⬅ Voltar</button>
+            </div>`;
+            document.querySelector('.controls').style.display = 'none';
+        }
+        function renderizar(lista) {
+            pokedex.innerHTML = '';
+            lista.forEach(p => {
+                document.querySelector('.controls').style.display = 'flex';
+                const card = document.createElement('div');
+                card.classList.add('card');
+
+                card.innerHTML = `
+                    <img src="${p.sprites.front_default}">
+                    <h3>${p.name}</h3>
+                    <p>${p.types.map(t => t.type.name).join(', ')}</p>
+                `;
+
+                card.onclick = () => infoPokemon(p);
+
+                pokedex.appendChild(card);
+            });
+        }
+           
+        carregarPokemons();
+    </script>
+
+</body>
+</html>
