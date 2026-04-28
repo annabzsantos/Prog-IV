@@ -6,6 +6,14 @@ body {
     line-height: 1.6;
 }
 
+p {
+    font-size: 20px;
+    color: #6b3f1f;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0; 
+}
+
 /* NAVBAR */
 nav {
     background-color: #4e6973;
@@ -63,6 +71,7 @@ header h1 {
 header p {
     font-size: 20px;
     max-width: 800px;
+    color: white;
     margin: auto;
 }
 
@@ -123,6 +132,29 @@ section h2 {
     font-size: 14px;
 }
 
+.card-livros {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.card-livros img {
+    width: 330px;
+    height: 450px;
+    object-fit: cover; 
+    border-radius: 12px;
+    border: 2px solid #c7a17a;
+}
+
+.card-livros p {
+    font-size: 20px;
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0;
+    padding: 0; 
+    text-align: left;
+}
+
 /* NAÇÕES */
 .nações-card {
     display: flex;
@@ -177,10 +209,18 @@ tr:hover {
 /* FOOTER */
 footer {
     background-color: #4e6973;
-    color: #f5e6c8;
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    color: #f5e6c8; 
+}
+
+.active {
+    border-bottom: 2px solid #f4d19b;
 }
 
 /* RESPONSIVO */
