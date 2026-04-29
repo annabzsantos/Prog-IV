@@ -17,7 +17,7 @@ p {
 /* NAVBAR */
 nav {
     background-color: #4e6973;
-    padding: 15px 30px;
+    padding: 18px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,7 +59,7 @@ header {
                 url('https://s2-techtudo.glbimg.com/UbybdGzvEXZZ5N7JAKuIjno-Nko=/0x0:1200x675/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2024/M/g/BwseAZR62bVPcEurhkmw/23121307435010.webp') center/cover;
     color: white;
     text-align: center;
-    padding: 120px 30px;
+    padding: 160px 30px;
 }
 
 header h1 {
@@ -75,13 +75,28 @@ header p {
     margin: auto;
 }
 
+.header-dobras {
+    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+                url('https://tm.ibxk.com.br/2024/02/27/27125943999188.jpg?ims=1000x400/filters:quality(80)') center/cover;
+    text-align: center;
+    padding: 160px 30px;
+}
+
+.header-livros {
+    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+                url('https://kanto.legiaodosherois.com.br/w760-h398-cfill/wp-content/uploads/2021/09/legiao_9rnOWSvepGI7.png.webp') center/cover;
+    text-align: center;
+    padding: 160px 30px;
+}
+
 /* SEÇÕES */
 section {
     background-color: #f8f1e4;
     margin: 30px auto;
     padding: 35px;
     border-radius: 14px;
-    max-width: 1500px;
+    max-width: 1700px;
+    width: 90%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     border: 1px solid #b89b7a;
 }
@@ -154,6 +169,87 @@ section h2 {
     padding: 0; 
     text-align: left;
 }
+
+.card-livros-text ol {
+    color: #6b3f1f;
+    font-size: 15px;
+    line-height: 1.6;
+    padding-left: 20px;
+    margin: 0;
+    columns: 3;
+    column-gap: 32px;
+}
+
+.card-livros-text ol li {
+    padding-left: 4px;
+    break-inside: avoid;
+}
+
+.card-livros-text ol li::marker {
+    color: #c7a17a;
+    font-weight: bold;
+}
+
+.card-livros-text h3 {
+    color: #5a3a1a;
+    font-family: Georgia, serif;
+    margin-top: 20px;
+    margin-bottom: 4px;
+    border-left: 3px solid #c7a17a;
+    padding-left: 10px;
+}
+
+.cards-dobras {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.imagens-dobras {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cards-dobras img {
+    max-width: 100%;
+    width: 420px;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #b89b7a;
+}
+
+.cards-dobras.agua {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.card-agua-norte{
+    flex-shrink: 0;
+}
+
+.cards-dobras img:hover {
+    transform: scale(1.03);
+    transition: 0.3s ease;
+}
+
+.dobras-text{
+    flex: 1;
+}
+
+.citacao {
+    font-style: italic;
+    padding: 20px 16px;
+    border-radius: 8px;
+    border-left: 2px solid #b89b7a;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.7;
+    background-color: #f0d7bf;
+}
+
 
 /* NAÇÕES */
 .nações-card {
