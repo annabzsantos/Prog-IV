@@ -267,6 +267,11 @@ section h2 {
     border: 2px solid var(--border-img);
 }
 
+.card-livros img:hover {
+    transform: scale(1.03);
+    transition: 0.3s ease;
+}
+
 .card-livros p {
     font-size: 20px;
     line-height: 1.8;
@@ -370,6 +375,11 @@ section h2 {
     width: 500px;
     border-radius: 12px;
     border: 2px solid var(--border-img);
+}
+
+.nações-card img:hover {
+    transform: scale(1.03);
+    transition: 0.3s ease;
 }
 
 .nações-texto p {
