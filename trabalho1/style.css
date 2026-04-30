@@ -185,6 +185,13 @@ header p {
     padding: 160px 30px;
 }
 
+.header-galeria {
+    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+                url('/trabalho1/assets/header-galeria.jpg') center/cover;
+    text-align: center;
+    padding: 160px 30px;
+}
+
 /* ===== SEÇÕES ===== */
 section {
     background-color: var(--bg-section);
