@@ -54,6 +54,7 @@ body.tema-dark {
 
 /* ===== BASE ===== */
 body {
+    cursor: url('/trabalho1/assets/normal1.cur'), auto;
     background-color: var(--bg-body);
     font-family: 'Trebuchet MS', sans-serif;
     margin: 0;
