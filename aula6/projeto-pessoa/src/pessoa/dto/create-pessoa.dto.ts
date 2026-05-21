@@ -1,1 +1,4 @@
-export class CreatePessoaDto {}
+export class CreatePessoaDto {
+    "nome": string;
+    "idade": number;
+}

@@ -28,7 +28,7 @@ export class PessoaController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.pessoaService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.pessoaService.remove(id);
   }
 }
