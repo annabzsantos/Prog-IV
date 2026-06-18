@@ -1,13 +1,17 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Pessoa {
-    @PrimaryGeneratedColumn("increment")
-    "id": number;
 
-    @Column()
-    "nome": string;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    "idade": number;
+  @Column()
+  nome: string;
+
+  @Column()
+  email: string;
+
+  @Column()
+  senha: string;
 }
