@@ -187,7 +187,7 @@ header p {
 
 .header-galeria {
     background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-                url('https://rollingstone.com.br/wp-content/uploads/avatar-aang-reprod.jpg') center/cover;
+                url('/trabalho1/assets/header-galeria.jpg') center/cover;
     text-align: center;
     padding: 160px 30px;
 }
